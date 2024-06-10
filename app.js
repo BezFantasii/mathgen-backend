@@ -26,7 +26,7 @@ const { request } = require('http');
 const { join } = require('path');
 
 
-const job = new CronJob('* */1 * * *', function() {
+const job = new CronJob('* * */1  * *', function() {
   fastify.pg.query(`UPDATE users SET daily_tasks = 0`)
 
 })
